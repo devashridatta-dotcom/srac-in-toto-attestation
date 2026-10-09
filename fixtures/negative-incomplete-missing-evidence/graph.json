@@ -1,0 +1,50 @@
+{
+  "schema": "https://github.com/devashridatta-dotcom/srac-in-toto-attestation/schema/safety-evidence-graph-v0.1",
+  "analysisRoot": {
+    "id": "analysis:braking-controller-change-001",
+    "subject": {
+      "name": "pkg:example/safety-controller@1.0.0",
+      "digest": {
+        "sha256": "2898b41b903d0ebb491452b44a103968d37639ead626d42309eca1df6f5996b9"
+      }
+    },
+    "triggerId": "trigger:configuration-change-001",
+    "evaluatedElements": [
+      "component:brake-control-loop"
+    ]
+  },
+  "triggers": [
+    {
+      "id": "trigger:configuration-change-001",
+      "type": "configuration-change",
+      "uri": "https://example.org/changes/42"
+    }
+  ],
+  "decisions": [
+    {
+      "id": "decision:approve-001",
+      "type": "approve",
+      "status": "accepted",
+      "appliesTo": [
+        "component:brake-control-loop"
+      ],
+      "requiredEvidence": [
+        "evidence:test-result-001"
+      ],
+      "requiredVerification": [
+        "verification:test-result-001"
+      ]
+    }
+  ],
+  "evidence": [],
+  "verification": [
+    {
+      "id": "verification:test-result-001",
+      "evidenceId": "evidence:test-result-001",
+      "result": "pass"
+    }
+  ],
+  "closure": {
+    "status": "complete"
+  }
+}

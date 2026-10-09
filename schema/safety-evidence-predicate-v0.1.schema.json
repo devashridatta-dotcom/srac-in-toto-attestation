@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/devashridatta-dotcom/srac-in-toto-attestation/schema/safety-evidence-predicate-v0.1",
+  "title": "SRAC safety-evidence attestation predicate demonstrator",
+  "type": "object",
+  "required": [
+    "specVersion",
+    "decisionEvidenceClosureGraph",
+    "analysisRootId",
+    "triggerId",
+    "declaredClosureStatus",
+    "authorization"
+  ],
+  "properties": {
+    "specVersion": { "const": "0.1.0" },
+    "decisionEvidenceClosureGraph": {
+      "type": "object",
+      "required": ["uri", "mediaType", "digest"],
+      "properties": {
+        "uri": { "type": "string", "minLength": 1 },
+        "mediaType": { "const": "application/vnd.srac.safety-evidence-graph+json" },
+        "digest": { "$ref": "#/$defs/digest" }
+      },
+      "additionalProperties": false
+    },
+    "analysisRootId": { "type": "string", "minLength": 1 },
+    "triggerId": { "type": "string", "minLength": 1 },
+    "declaredClosureStatus": { "enum": ["open", "inProgress", "complete", "incomplete"] },
+    "authorization": {
+      "type": "object",
+      "required": ["authorityId", "decisionId"],
+      "properties": {
+        "authorityId": { "type": "string", "minLength": 1 },
+        "decisionId": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "digest": {
+      "type": "object",
+      "required": ["sha256"],
+      "properties": {
+        "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,38 @@
+{
+  "schema": "https://github.com/devashridatta-dotcom/srac-in-toto-attestation/schema/safety-evidence-graph-v0.1",
+  "analysisRoot": {
+    "id": "analysis:documentation-only-change-001",
+    "subject": {
+      "name": "pkg:example/safety-controller@1.0.0",
+      "digest": {
+        "sha256": "2898b41b903d0ebb491452b44a103968d37639ead626d42309eca1df6f5996b9"
+      }
+    },
+    "triggerId": "trigger:configuration-change-001",
+    "evaluatedElements": [
+      "requirement:diagnostic-wording"
+    ]
+  },
+  "triggers": [
+    {
+      "id": "trigger:configuration-change-001",
+      "type": "configuration-change",
+      "uri": "https://example.org/changes/42"
+    }
+  ],
+  "decisions": [
+    {
+      "id": "decision:no-action-001",
+      "type": "noAction",
+      "status": "accepted",
+      "appliesTo": [
+        "requirement:diagnostic-wording"
+      ]
+    }
+  ],
+  "evidence": [],
+  "verification": [],
+  "closure": {
+    "status": "complete"
+  }
+}

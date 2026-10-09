@@ -1,0 +1,21 @@
+{
+  "verificationKeys": [
+    {
+      "keyId": "demo-safety-authority-ed25519",
+      "algorithm": "ed25519",
+      "publicKey": "A6dzVgpWeZz/4eG+4OUDJYQzNDrFjq15frBYA/7mDw8="
+    },
+    {
+      "keyId": "demo-untrusted-reviewer-ed25519",
+      "algorithm": "ed25519",
+      "publicKey": "7k9xT938OwE9BtlU+szwTvFc2jPwWUd0LJLMX8VEXb0="
+    }
+  ],
+  "authorizedSigners": [
+    {
+      "keyId": "demo-safety-authority-ed25519",
+      "authorityId": "https://example.org/authorities/safety-board"
+    }
+  ],
+  "allowNoActionWithoutEvidence": true
+}

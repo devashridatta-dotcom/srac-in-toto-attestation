@@ -1,0 +1,7 @@
+{
+  "signature": "pass",
+  "artifactBinding": "pass",
+  "graphCompleteness": "fail",
+  "authorization": "not-evaluated",
+  "policyEligible": false
+}
